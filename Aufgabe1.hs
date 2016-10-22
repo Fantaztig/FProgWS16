@@ -1,5 +1,6 @@
 -- David Schroeder 1226747 TU Wien Funktionale Programmierung WS 16 Uebung 1
 
+
 -- Aufgabe 1: Inverse Fakultaet bestimmen und falls existent ausgeben, ansonsten -1 ausgeben
 invFac :: Integer -> Integer
 invFac n 
@@ -18,9 +19,11 @@ facIndex n limit
 factorial :: Integer -> Integer
 factorial n = product [1..n]
 
+
 --Aufgabe 2: Zahlenfolge aus String extrahieren
 extractDigits :: String -> String
-extractDigits input = [x|x<-input, x `elem` ['0'..'9']]
+extractDigits input = [x | x <- input, x `elem` ['0'..'9']]
+
 
 --Aufgabe 3: Zahlenfolge extrahieren und zu Integer konvertieren
 convert :: String -> Integer
@@ -28,6 +31,7 @@ convert input
 	|digits == "" = 0
 	|otherwise = read digits
 	where digits = extractDigits input
+	
 	
 --Aufgabe 4: Die erste Primzahl mit Laenge n aus einem String bestimmen
 findLeftMostPrime :: String -> Int -> Integer
@@ -52,6 +56,7 @@ isPrime n = primeFactors n == [1,n]
 primeFactors :: Integer -> [Integer]
 primeFactors n = [x | x <- [1..n], mod n x == 0]
 	
+	
+--Aufgabe 5: Alle Primzahlen in der Zahlenfolge eines Strings bestimmen	
 findAllPrimes :: String -> Int -> [Integer]
-findAllPrimes input n = primes
-	where primes = [x | x <- intsOfLengthN (extractDigits input) n, isPrime x]
+findAllPrimes input n = [x | x <- intsOfLengthN (extractDigits input) n, isPrime x]
