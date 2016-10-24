@@ -2,8 +2,8 @@
 
 
 -- Aufgabe 1: Inverse Fakultaet bestimmen und falls existent ausgeben, ansonsten -1 ausgeben
-invFac :: Integer -> Integer
-invFac n 
+facInv :: Integer -> Integer
+facInv n 
     | n < 2 = -1
     | otherwise = facIndex 1 n
 
@@ -55,7 +55,7 @@ isPrime n = primeFactors n == [1,n]
 --Primfaktorzerlegung
 primeFactors :: Integer -> [Integer]
 primeFactors n = [x | x <- [1..n], mod n x == 0]
-    
+
     
 --Aufgabe 5: Alle Primzahlen in der Zahlenfolge eines Strings bestimmen 
 findAllPrimes :: String -> Int -> [Integer]
